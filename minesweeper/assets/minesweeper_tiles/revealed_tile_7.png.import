@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bob7b5v776i50"
-path="res://.godot/imported/MinesweeperSet.png-b6b37480d889e0b1788af6dc74f6f6a1.ctex"
+uid="uid://bi41osgljncdt"
+path="res://.godot/imported/revealed_tile_7.png-c44b6c7d9e8899880018fa66260d36b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UnityMinesweeperTemplate/MinesweeperSet.png"
-dest_files=["res://.godot/imported/MinesweeperSet.png-b6b37480d889e0b1788af6dc74f6f6a1.ctex"]
+source_file="res://assets/minesweeper_tiles/revealed_tile_7.png"
+dest_files=["res://.godot/imported/revealed_tile_7.png-c44b6c7d9e8899880018fa66260d36b8.ctex"]
 
 [params]
 

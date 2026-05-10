@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://b7c7h1nef24nj"]
 
-[ext_resource type="Texture2D" uid="uid://cigcwwh7edmdi" path="res://assets/UnityMinesweeperTemplate/minesweeper-logo.png" id="1_wtcfe"]
-
 [node name="Node2D" type="Node2D" unique_id=1924181588]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=745528189]
 position = Vector2(602, 738)
-texture = ExtResource("1_wtcfe")

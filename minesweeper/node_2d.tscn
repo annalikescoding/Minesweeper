@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://b7c7h1nef24nj"]
 
 [node name="Node2D" type="Node2D" unique_id=1924181588]
+<<<<<<< Updated upstream
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=745528189]
 position = Vector2(602, 738)
+=======
+>>>>>>> Stashed changes

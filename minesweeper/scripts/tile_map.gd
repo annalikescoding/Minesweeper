@@ -8,3 +8,4 @@ func _input(event):
 
 			print(clicked_cell_coord)
 			set_cell(0, clicked_cell_coord, -1)
+#hihihi

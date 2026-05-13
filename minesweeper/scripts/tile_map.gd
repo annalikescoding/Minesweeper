@@ -1,4 +1,5 @@
 extends TileMap
+
 @export var cols = 10
 @export var rows = 10
 @export var numOfMines = 10

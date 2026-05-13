@@ -3,8 +3,8 @@ extends TileMap
 @export var rows = 10
 @export var numOfMines = 10
 
-#Uses Atlas Coordinates from TileMap,
-#source by https://www.youtube.com/watch?v=vEyDbROrw0Q
+##Uses Atlas Coordinates from TileMap,
+##source by https://www.youtube.com/watch?v=vEyDbROrw0Q
 const main_source_id = 14
 const opened_tile_atlas_pos = Vector2i(6, 0)
 const bombed_tile_atlas_pos = Vector2i(2, 0)

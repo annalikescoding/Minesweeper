@@ -48,6 +48,7 @@ func isMine(x, y):
 	return get_cell_atlas_coords(0, Vector2i(x, y)) == Vector2i(2, 0) #Google Gemini Search
 
 func safeCells():
+	@warning_ignore("shadowed_variable")
 	var safeCells = []
 	for x in (cols):
 		for y in (rows):
@@ -56,6 +57,7 @@ func safeCells():
 	return safeCells
 
 func adjacentCells():
+	@warning_ignore("shadowed_variable")
 	var adjacentCells = []
 	
 	for x in (cols):

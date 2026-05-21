@@ -1,12 +1,25 @@
 extends TileMap
 
-@export var cols = 10
-@export var rows = 10
+@export var cols = 12
+@export var rows = 12
 @export var numOfMines = 10
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+@export var main_source_id = 0
+@export var closed_tile_atlas_pos = Vector2i(0, 0)
+@export var opened_tile_atlas_pos = Vector2i(6, 0)
+
+=======
+>>>>>>> Stashed changes
 @export var soil_layer_node: TileMap
 
 const opened_tile_atlas_pos = Vector2i(6, 0)
 const main_source_id = 14
+<<<<<<< Updated upstream
+=======
+>>>>>>> b176eb8d51be10d05abd0196b82783015448ce2e
+>>>>>>> Stashed changes
 
 const covered_tile_atlas_pos = Vector2i(0,0)
 const flag_tile_atlas_pos = Vector2i(5,0)
@@ -18,6 +31,14 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var clicked_cell_coord = local_to_map(get_local_mouse_position())
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+							
+			print(clicked_cell_coord)
+			set_cell(0, clicked_cell_coord, main_source_id, opened_tile_atlas_pos)
+=======
+>>>>>>> Stashed changes
 
 			#print(clicked_cell_coord)
 			#set_cell(0, clicked_cell_coord, main_source_id, opened_tile_atlas_pos)
@@ -31,6 +52,10 @@ func _input(event):
 			
 			if is_inside_bounds(clicked_cell_coord) and not clicked_cell_coord in revealed_cells:
 				toggle_flag(clicked_cell_coord)
+<<<<<<< Updated upstream
+=======
+>>>>>>> b176eb8d51be10d05abd0196b82783015448ce2e
+>>>>>>> Stashed changes
 #hihihi
 func flood_fill(cell: Vector2i):
 	if not is_inside_bounds(cell) or cell in flagged_cells:		return

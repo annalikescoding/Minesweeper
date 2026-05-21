@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cyha4ei38m28u"]
+
+[ext_resource type="StyleBox" uid="uid://qri5c5xybrxc" path="res://new_style_box_flat.tres" id="1_y26ei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxx3c"]
+bg_color = Color(0.8960521, 0.16751942, 0.27954036, 1)
+
+[node name="GameOver" type="CanvasLayer" unique_id=30813139]
+
+[node name="NewGameButton" type="Button" parent="." unique_id=1508368432]
+offset_left = 190.0
+offset_top = 380.0
+offset_right = 310.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("1_y26ei")
+text = "Restart"
+
+[node name="WinBox" type="Panel" parent="." unique_id=433546480]
+offset_left = 123.0
+offset_top = 210.0
+offset_right = 373.0
+offset_bottom = 290.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxx3c")
+
+[node name="LoseBox" type="Panel" parent="." unique_id=1859832769]
+offset_left = 123.0
+offset_top = 210.0
+offset_right = 373.0
+offset_bottom = 290.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxx3c")
+
+[node name="WinText" type="Label" parent="." unique_id=1834326272]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -21.0
+offset_right = 78.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "YOU WON!"
+
+[node name="LoseText" type="Label" parent="." unique_id=1581322171]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -21.0
+offset_right = 78.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"

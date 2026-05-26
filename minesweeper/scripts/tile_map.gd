@@ -1,44 +1,30 @@
+#Raynee worked on the entirety of this tile_map script except for the last gameWon
+#function at the very end
+
 extends TileMap
 
 @export var cols = 10
 @export var rows = 10
 @export var numOfMines = 10
-<<<<<<< HEAD
-
-@export var main_source_id = 0
-@export var closed_tile_atlas_pos = Vector2i(0, 0)
-@export var opened_tile_atlas_pos = Vector2i(6, 0)
-
-
 @export var soil_layer_node: TileMap
-
-#const opened_tile_atlas_pos = Vector2i(6, 0)
-#const main_source_id = 14
-
-=======
-@export var soil_layer_node: TileMap
-
+@onready var game_over_screen: Node = $"../../GameOver"
+@onready var win_label: Label = $"../../GameOver/WinText"
+@onready var win_panel: Panel = $"../../GameOver/WinBox"
+@onready var lose_label: Label = $"../../GameOver/LoseText"
 const opened_tile_atlas_pos = Vector2i(6, 0)
 const main_source_id = 14
->>>>>>> parent of 4793f05 (Revert "BUTTONSSS")
 
 const covered_tile_atlas_pos = Vector2i(0,0)
 const flag_tile_atlas_pos = Vector2i(5,0)
 
 var revealed_cells = []
 var flagged_cells = []
+
 #Raynee:
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var clicked_cell_coord = local_to_map(get_local_mouse_position())
-<<<<<<< HEAD
-
-			print(clicked_cell_coord)
-			set_cell(0, clicked_cell_coord, main_source_id, opened_tile_atlas_pos)
-
-=======
->>>>>>> parent of 4793f05 (Revert "BUTTONSSS")
 
 			#print(clicked_cell_coord)
 			#set_cell(0, clicked_cell_coord, main_source_id, opened_tile_atlas_pos)
@@ -52,10 +38,7 @@ func _input(event):
 			
 			if is_inside_bounds(clicked_cell_coord) and not clicked_cell_coord in revealed_cells:
 				toggle_flag(clicked_cell_coord)
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 4793f05 (Revert "BUTTONSSS")
+		gameWon()
 #hihihi
 func flood_fill(cell: Vector2i):
 	if not is_inside_bounds(cell) or cell in flagged_cells:		return
@@ -69,7 +52,7 @@ func flood_fill(cell: Vector2i):
 	if is_mine(cell):
 		return
 
-	if get_neighbor_mine_count(cell) > 0:
+	if get_neighbor_mine_count(cell) > 0 or get_neighbor_mine_count(cell) == - 1:
 		return
 		
 	for x in range(-1, 2):
@@ -93,6 +76,10 @@ func get_neighbor_mine_count(cell: Vector2i) -> int:
 	if not soil_layer_node:
 		return 0
 	var atlas = soil_layer_node.get_cell_atlas_coords(0, cell)
+	
+	if atlas == Vector2i(-1, -1): 
+		return -1
+	
 	if atlas == Vector2i(0, 1): return 1
 	if atlas == Vector2i(1, 1): return 2
 	if atlas == Vector2i(2, 1): return 3
@@ -110,3 +97,16 @@ func toggle_flag(cell: Vector2i):
 	else:
 		flagged_cells.append(cell)
 		set_cell(0, cell, main_source_id, flag_tile_atlas_pos)
+
+#Anna
+func gameWon():
+	var totalCells = rows * cols
+	if totalCells - revealed_cells.size() == numOfMines:
+		if game_over_screen:
+			game_over_screen.show()
+		if lose_label:
+			lose_label.hide()
+		if win_label:
+			win_label.show()
+		if win_panel:
+			win_panel.show()
